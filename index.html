@@ -1,16 +1,1436 @@
 <!DOCTYPE html>
+
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dakwah Digital</title>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0"
+>
+
+<title>
+Pusat Karya Konten Dakwah
+</title>
+
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+
+body{
+
+  margin:0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0fdf4,
+      #eff6ff
+    );
+
+  color:#17351f;
+
+}
+
+
+/* HEADER */
+
+header{
+
+  background:
+    linear-gradient(
+      135deg,
+      #14532d,
+      #15803d,
+      #22c55e
+    );
+
+  color:white;
+
+  text-align:center;
+
+  padding:
+    55px
+    20px
+    90px;
+
+}
+
+
+.logo{
+
+  font-size:65px;
+
+}
+
+
+header h1{
+
+  margin:
+    10px
+    0;
+
+  font-size:
+    clamp(
+      28px,
+      5vw,
+      45px
+    );
+
+}
+
+
+header p{
+
+  max-width:720px;
+
+  margin:auto;
+
+  line-height:1.7;
+
+  opacity:.95;
+
+}
+
+
+/* CONTAINER */
+
+.container{
+
+  max-width:1100px;
+
+  margin:
+    -50px
+    auto
+    50px;
+
+  padding:
+    0
+    18px;
+
+  position:relative;
+
+}
+
+
+/* CARD */
+
+.card{
+
+  background:white;
+
+  border-radius:22px;
+
+  padding:25px;
+
+  margin-bottom:25px;
+
+  box-shadow:
+    0 15px 40px
+    rgba(
+      0,
+      0,
+      0,
+      .08
+    );
+
+}
+
+
+/* PERIODE */
+
+.period{
+
+  text-align:center;
+
+  padding:22px;
+
+  border-radius:17px;
+
+  background:#fefce8;
+
+  border:
+    1px solid
+    #fde68a;
+
+}
+
+
+.period-title{
+
+  font-weight:bold;
+
+  color:#854d0e;
+
+  font-size:21px;
+
+}
+
+
+.period-text{
+
+  margin-top:7px;
+
+  color:#92400e;
+
+}
+
+
+/* BUTTON */
+
+.button-area{
+
+  text-align:center;
+
+  margin-top:20px;
+
+}
+
+
+.btn{
+
+  display:inline-block;
+
+  text-decoration:none;
+
+  padding:
+    15px
+    28px;
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #15803d,
+      #22c55e
+    );
+
+  color:white;
+
+  font-size:17px;
+
+  font-weight:bold;
+
+  box-shadow:
+    0 8px 22px
+    rgba(
+      21,
+      128,
+      61,
+      .22
+    );
+
+  transition:.2s;
+
+}
+
+
+.btn:hover{
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+/* STATISTIK */
+
+.stats{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:15px;
+
+}
+
+
+.stat{
+
+  text-align:center;
+
+  padding:22px;
+
+  background:#f8fafc;
+
+  border-radius:16px;
+
+}
+
+
+.stat-number{
+
+  font-size:34px;
+
+  font-weight:bold;
+
+  color:#15803d;
+
+}
+
+
+.stat-label{
+
+  color:#64748b;
+
+  margin-top:5px;
+
+}
+
+
+/* SEARCH */
+
+.search{
+
+  width:100%;
+
+  padding:15px 17px;
+
+  border:
+    2px solid
+    #e2e8f0;
+
+  border-radius:13px;
+
+  font-size:16px;
+
+  outline:none;
+
+  margin-bottom:22px;
+
+}
+
+
+.search:focus{
+
+  border-color:#22c55e;
+
+}
+
+
+/* GRID */
+
+.grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(
+        270px,
+        1fr
+      )
+    );
+
+  gap:18px;
+
+}
+
+
+/* KARYA */
+
+.karya{
+
+  border:
+    1px solid
+    #e2e8f0;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  background:white;
+
+  transition:.2s;
+
+}
+
+
+.karya:hover{
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(
+      0,
+      0,
+      0,
+      .08
+    );
+
+}
+
+
+.karya-head{
+
+  padding:28px;
+
+  text-align:center;
+
+  font-size:48px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dcfce7,
+      #eff6ff
+    );
+
+}
+
+
+.karya-body{
+
+  padding:20px;
+
+}
+
+
+.karya-title{
+
+  font-size:19px;
+
+  font-weight:bold;
+
+  line-height:1.4;
+
+  margin-bottom:12px;
+
+}
+
+
+.meta{
+
+  color:#64748b;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+}
+
+
+.actions{
+
+  display:flex;
+
+  gap:8px;
+
+  margin-top:16px;
+
+}
+
+
+.actions a{
+
+  flex:1;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  padding:11px;
+
+  border-radius:10px;
+
+  font-size:14px;
+
+  font-weight:bold;
+
+}
+
+
+.view{
+
+  background:#dcfce7;
+
+  color:#166534;
+
+}
+
+
+.drive{
+
+  background:#eff6ff;
+
+  color:#1d4ed8;
+
+}
+
+
+/* EMPTY */
+
+.empty{
+
+  grid-column:
+    1 / -1;
+
+  text-align:center;
+
+  padding:55px 20px;
+
+  color:#64748b;
+
+  line-height:1.7;
+
+}
+
+
+.empty-icon{
+
+  font-size:55px;
+
+  margin-bottom:10px;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+  text-align:center;
+
+  padding:35px 20px;
+
+  color:#64748b;
+
+}
+
+
+footer strong{
+
+  color:#166534;
+
+}
+
+
+/* MOBILE */
+
+@media(
+  max-width:650px
+){
+
+  header{
+
+    padding:
+      40px
+      15px
+      80px;
+
+  }
+
+
+  .stats{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .actions{
+
+    flex-direction:
+      column;
+
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <h1>🎙️ Dakwah Digital</h1>
 
-    <p>Selamat datang di halaman Dakwah Digital.</p>
+<header>
+
+<div class="logo">
+🌙
+</div>
+
+
+<h1>
+Pusat Karya Konten Dakwah
+</h1>
+
+
+<p>
+
+Tempat mengirim,
+menyimpan,
+dan menampilkan
+karya konten dakwah.
+
+<br>
+
+<strong>
+Berkarya • Berbagi • Menginspirasi
+</strong>
+
+</p>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     PERIODE
+===================================================== -->
+
+<section class="card">
+
+
+<div class="period">
+
+<div
+class="period-title"
+id="periode"
+>
+
+Memuat periode...
+
+</div>
+
+
+<div class="period-text">
+
+Pengiriman karya
+dilakukan setiap
+dua pekan.
+
+</div>
+
+</div>
+
+
+<div class="button-area">
+
+
+<a
+id="btnKirim"
+class="btn"
+href="#"
+>
+
+🚀 KIRIM KARYA
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STATISTIK
+===================================================== -->
+
+<section class="card">
+
+
+<h2>
+📊 Statistik Karya
+</h2>
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<div
+id="total"
+class="stat-number"
+>
+0
+</div>
+
+<div
+class="stat-label"
+>
+Total Karya
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div
+id="periodeTotal"
+class="stat-number"
+>
+0
+</div>
+
+<div
+class="stat-label"
+>
+Periode Ini
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div
+id="pengirim"
+class="stat-number"
+>
+0
+</div>
+
+<div
+class="stat-label"
+>
+Pengirim
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALERI
+===================================================== -->
+
+<section class="card">
+
+
+<h2>
+🌟 Karya yang Telah Dikirim
+</h2>
+
+
+<input
+id="search"
+class="search"
+type="search"
+placeholder="🔎 Cari nama, judul, atau periode..."
+>
+
+
+<div
+id="galeri"
+class="grid"
+>
+
+<div class="empty">
+
+<div class="empty-icon">
+⏳
+</div>
+
+Memuat karya...
+
+</div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+🌙
+
+<strong>
+Pusat Karya Konten Dakwah
+</strong>
+
+<br><br>
+
+Berkarya • Berbagi • Menginspirasi
+
+</footer>
+
+
+
+<script>
+
+
+/********************************************************
+ * ======================================================
+ * KONFIGURASI
+ * ======================================================
+ *
+ * GANTI URL DI BAWAH DENGAN URL WEB APP ANDA.
+ *
+ ********************************************************/
+
+
+const APPS_SCRIPT_URL =
+
+"https://script.google.com/macros/s/GANTI_ID_DEPLOYMENT/exec";
+
+
+/*
+ * URL halaman upload
+ */
+
+const UPLOAD_URL =
+
+APPS_SCRIPT_URL +
+"?page=upload";
+
+
+
+/********************************************************
+ * DATA
+ ********************************************************/
+
+let semuaKarya = [];
+
+
+
+/********************************************************
+ * TOMBOL UPLOAD
+ ********************************************************/
+
+document
+.getElementById(
+  "btnKirim"
+)
+.href =
+UPLOAD_URL;
+
+
+
+/********************************************************
+ * LOAD DATA
+ ********************************************************/
+
+function loadData(){
+
+  const callbackName =
+
+    "karyaCallback_" +
+    Date.now();
+
+
+  window[callbackName] =
+
+    function(data){
+
+      try{
+
+        if(
+          !data ||
+          !data.success
+        ){
+
+          throw new Error(
+            "Data tidak valid."
+          );
+
+        }
+
+
+        /*
+         * PERIODE
+         */
+
+        document
+        .getElementById(
+          "periode"
+        )
+        .textContent =
+          data.periode.label;
+
+
+        /*
+         * STATISTIK
+         */
+
+        document
+        .getElementById(
+          "total"
+        )
+        .textContent =
+          data.statistik.total;
+
+
+        document
+        .getElementById(
+          "periodeTotal"
+        )
+        .textContent =
+          data.statistik.periode;
+
+
+        document
+        .getElementById(
+          "pengirim"
+        )
+        .textContent =
+          data.statistik.pengirim;
+
+
+        /*
+         * KARYA
+         */
+
+        semuaKarya =
+          data.karya || [];
+
+
+        tampilKarya(
+          semuaKarya
+        );
+
+
+      }
+
+      catch(error){
+
+        tampilError();
+
+      }
+
+
+      delete window[
+        callbackName
+      ];
+
+
+      if(
+        script.parentNode
+      ){
+
+        script
+          .parentNode
+          .removeChild(
+            script
+          );
+
+      }
+
+    };
+
+
+  /*
+   * JSONP SCRIPT
+   */
+
+  const script =
+    document.createElement(
+      "script"
+    );
+
+
+  script.src =
+
+    APPS_SCRIPT_URL +
+
+    "?callback=" +
+
+    callbackName +
+
+    "&t=" +
+
+    Date.now();
+
+
+  script.onerror =
+
+    function(){
+
+      tampilError();
+
+
+      delete window[
+        callbackName
+      ];
+
+
+      if(
+        script.parentNode
+      ){
+
+        script
+          .parentNode
+          .removeChild(
+            script
+          );
+
+      }
+
+    };
+
+
+  document
+    .body
+    .appendChild(
+      script
+    );
+
+}
+
+
+
+/********************************************************
+ * TAMPIL KARYA
+ ********************************************************/
+
+function tampilKarya(
+  data
+){
+
+  const galeri =
+
+    document
+    .getElementById(
+      "galeri"
+    );
+
+
+  if(
+    !data ||
+    data.length === 0
+  ){
+
+    galeri.innerHTML =
+
+      `
+
+      <div class="empty">
+
+        <div class="empty-icon">
+          📚
+        </div>
+
+        Belum ada karya
+        yang dikirim.
+
+      </div>
+
+      `;
+
+    return;
+
+  }
+
+
+  galeri.innerHTML =
+
+    data
+    .map(
+      function(item){
+
+        return `
+
+        <article class="karya">
+
+
+          <div class="karya-head">
+
+            ${getIcon(
+              item.tipeFile
+            )}
+
+          </div>
+
+
+          <div class="karya-body">
+
+
+            <div class="karya-title">
+
+              ${escapeHTML(
+                item.judul
+              )}
+
+            </div>
+
+
+            <div class="meta">
+
+              👤
+              ${escapeHTML(
+                item.nama
+              )}
+
+              <br>
+
+              📅
+              ${escapeHTML(
+                item.periode
+              )}
+
+              <br>
+
+              📎
+              ${escapeHTML(
+                item.namaFile
+              )}
+
+              <br>
+
+              💾
+              ${escapeHTML(
+                item.ukuran
+              )}
+
+            </div>
+
+
+            <div class="actions">
+
+
+              <a
+              class="view"
+              href="${item.url}"
+              target="_blank"
+              rel="noopener"
+              >
+
+              👁️ Lihat
+
+              </a>
+
+
+              <a
+              class="drive"
+              href="${item.url}"
+              target="_blank"
+              rel="noopener"
+              >
+
+              📂 Drive
+
+              </a>
+
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+        `;
+
+      }
+    )
+    .join("");
+
+}
+
+
+
+/********************************************************
+ * SEARCH
+ ********************************************************/
+
+document
+.getElementById(
+  "search"
+)
+.addEventListener(
+  "input",
+  function(){
+
+    const keyword =
+
+      this.value
+      .toLowerCase()
+      .trim();
+
+
+    if(
+      !keyword
+    ){
+
+      tampilKarya(
+        semuaKarya
+      );
+
+      return;
+
+    }
+
+
+    const hasil =
+
+      semuaKarya.filter(
+        function(item){
+
+          return (
+
+            String(
+              item.nama
+            )
+            .toLowerCase()
+            .includes(
+              keyword
+            )
+
+
+            ||
+
+
+            String(
+              item.judul
+            )
+            .toLowerCase()
+            .includes(
+              keyword
+            )
+
+
+            ||
+
+
+            String(
+              item.periode
+            )
+            .toLowerCase()
+            .includes(
+              keyword
+            )
+
+          );
+
+        }
+      );
+
+
+    tampilKarya(
+      hasil
+    );
+
+  }
+);
+
+
+
+/********************************************************
+ * ICON FILE
+ ********************************************************/
+
+function getIcon(
+  tipe
+){
+
+  tipe =
+    String(
+      tipe || ""
+    )
+    .toLowerCase();
+
+
+  if(
+    tipe.includes(
+      "image"
+    )
+  ){
+
+    return "🖼️";
+
+  }
+
+
+  if(
+    tipe.includes(
+      "video"
+    )
+  ){
+
+    return "🎬";
+
+  }
+
+
+  if(
+    tipe.includes(
+      "audio"
+    )
+  ){
+
+    return "🎵";
+
+  }
+
+
+  if(
+    tipe.includes(
+      "pdf"
+    )
+  ){
+
+    return "📕";
+
+  }
+
+
+  if(
+    tipe.includes(
+      "presentation"
+    )
+  ){
+
+    return "📊";
+
+  }
+
+
+  if(
+    tipe.includes(
+      "spreadsheet"
+    )
+  ){
+
+    return "📈";
+
+  }
+
+
+  if(
+    tipe.includes(
+      "word"
+    )
+  ){
+
+    return "📝";
+
+  }
+
+
+  return "📄";
+
+}
+
+
+
+/********************************************************
+ * ESCAPE HTML
+ ********************************************************/
+
+function escapeHTML(
+  text
+){
+
+  return String(
+    text || ""
+  )
+
+  .replace(
+    /&/g,
+    "&amp;"
+  )
+
+  .replace(
+    /</g,
+    "&lt;"
+  )
+
+  .replace(
+    />/g,
+    "&gt;"
+  )
+
+  .replace(
+    /"/g,
+    "&quot;"
+  )
+
+  .replace(
+    /'/g,
+    "&#039;"
+  );
+
+}
+
+
+
+/********************************************************
+ * ERROR
+ ********************************************************/
+
+function tampilError(){
+
+  document
+  .getElementById(
+    "galeri"
+  )
+  .innerHTML =
+
+  `
+
+  <div class="empty">
+
+    <div class="empty-icon">
+      ⚠️
+    </div>
+
+    Tidak dapat memuat
+    daftar karya.
+
+    <br><br>
+
+    Periksa konfigurasi
+    Google Apps Script.
+
+  </div>
+
+  `;
+
+}
+
+
+
+/********************************************************
+ * JALANKAN
+ ********************************************************/
+
+loadData();
+
+
+</script>
+
 
 </body>
+
 </html>
