@@ -16,6 +16,35 @@ header{position:sticky;top:0;z-index:10;background:#073f32f2;color:#fff;backdrop
 section{padding:68px 0;animation:rise-in .65s ease both}section[hidden]{display:none!important}@keyframes rise-in{from{opacity:.85;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.kicker{font-size:11px;letter-spacing:2.2px;color:#168357;font-weight:900}.section-head{margin-bottom:27px}.section-head h2{color:#103f31}h2{font-size:clamp(28px,4vw,40px);line-height:1.2;margin:8px 0;letter-spacing:-1px}.panel{padding:30px;border:1px solid #e0e9e1;border-radius:25px;background:var(--panel);box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}.field{display:flex;flex-direction:column;gap:8px;min-width:0}.full{grid-column:1/-1}label{font-size:13px;font-weight:800;color:#214b3b}input,select,textarea{width:100%;padding:14px 15px;color:var(--text);background:#fbfdf9;border:1px solid #d8e5da;border-radius:13px;outline:none;transition:border-color .2s,box-shadow .2s}input:focus,select:focus,textarea:focus{border-color:#20a76a;box-shadow:0 0 0 4px #20a76a16}textarea{min-height:110px;resize:vertical}input[type=file]{font-size:12px;background:#f7faf5}.hint{font-size:12px;color:var(--muted)}.consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted);font-weight:500}.consent input{width:auto;margin-top:6px;accent-color:#08734f}#formMessage{font-size:14px;overflow-wrap:anywhere;margin-top:7px}.success{color:#087d4b}.error{color:#c43b4c}
 #galeri{background:linear-gradient(180deg,#edf5ed,#f7f8f2)}.gallery-tools{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.gallery-tools input{flex:1;min-width:190px}.gallery-tools select{width:auto;min-width:160px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.work-card{min-width:0;overflow:hidden;border:1px solid #dfe9df;border-radius:20px;background:#fff;display:flex;flex-direction:column;box-shadow:0 8px 28px #0a473009;transition:transform .22s,box-shadow .22s}.work-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px #0a473018}.cover{height:210px;position:relative;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#d8f3df,#f4e8c8);font-size:48px}.cover img{width:100%;height:100%;object-fit:cover;display:block}.fallback{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:12px;color:#0d6b49}.fallback small{font-size:11px;color:#527163}.work-body{padding:20px;display:flex;flex-direction:column;flex:1;min-width:0}.category{color:#138254;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px}.work-body h3{font-size:18px;line-height:1.35;overflow-wrap:anywhere;margin:8px 0;color:#123e30}.work-body p{font-size:13px;color:var(--muted);overflow-wrap:anywhere}.work-meta{margin-top:auto;margin-bottom:12px;font-size:12px;color:#62766b}.work-link{color:#08784f;font-size:13px;font-weight:900}.empty{grid-column:1/-1;text-align:center;border:1px dashed #b9d2bf;border-radius:17px;padding:38px;color:var(--muted);background:#ffffffa6}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.step{padding:24px;border:1px solid #dfebdf;border-radius:20px;background:linear-gradient(145deg,#fff,#f7fbf5);box-shadow:0 10px 30px #0a473008;transition:transform .2s}.step:hover{transform:translateY(-3px)}.step>div{font-size:26px}.step h3{color:#114733}.step p{color:var(--muted);font-size:13px}
 footer{padding:35px 0;background:#062f26;color:#d2e7d8;font-size:12px;border-top:3px solid #65f5a8}.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}.footer-row span:last-child{color:#9fc8af}
+
+/* Batas, warna, dan aksen visual untuk setiap bagian */
+.hero{border-bottom:1px solid #c9e5d0}
+.hero .eyebrow{box-shadow:0 5px 18px #0b5b450d}
+#kirim{position:relative;background:linear-gradient(145deg,#e7f8ec 0%,#f8fbf5 58%,#fff7e5 100%);border-top:1px solid #c4e7ce;border-bottom:1px solid #d5e8d8}
+#kirim .section-head{padding:22px 25px;border:1px solid #b7e2c5;border-left:5px solid #16a36a;border-radius:18px;background:linear-gradient(110deg,#ffffffed,#e4f8e9e8);box-shadow:0 10px 28px #08784f0c}
+#kirim .section-head .kicker{display:inline-block;padding:5px 10px;border-radius:8px;background:#d7f6e1;border:1px solid #b8e8c8}
+#kirim .panel{border:1px solid #b8dfc3;border-top:4px solid #18a66a;background:linear-gradient(145deg,#fff 0%,#fbfff9 100%);box-shadow:0 18px 42px #0b5b4512}
+#kirim .field{padding:2px}
+#galeri{background:linear-gradient(145deg,#e7f5ed 0%,#f5faf4 52%,#fdf5e5 100%);border-top:1px solid #c8e3d0;border-bottom:1px solid #c8e3d0}
+#galeri .section-head{padding:22px 25px;border:1px solid #c5dfc9;border-left:5px solid #d2ad52;border-radius:18px;background:linear-gradient(110deg,#ffffffed,#f8f2dfc9);box-shadow:0 10px 28px #94732a0b}
+#galeri .section-head .kicker{color:#967022;display:inline-block;padding:5px 10px;border-radius:8px;background:#fff1c9;border:1px solid #efdfac}
+#galeri .gallery-tools{padding:14px;border:1px solid #cbded0;border-radius:17px;background:#ffffffb8;box-shadow:0 8px 22px #0b5b4508}
+#galeri .work-card{border:1px solid #cbded0;border-top:3px solid #28a76c}
+#galeri .work-card:nth-child(3n + 2){border-top-color:#d4b35e}
+#galeri .work-card:nth-child(3n){border-top-color:#80c9ad}
+#panduan{background:linear-gradient(145deg,#fdf7e8 0%,#f1f9ef 48%,#e7f7ed 100%);border-top:1px solid #e8dbb5;border-bottom:1px solid #cbe4d0}
+#panduan .section-head{padding:22px 25px;border:1px solid #e5d8ae;border-left:5px solid #c4a24b;border-radius:18px;background:linear-gradient(110deg,#fffdf7,#fff4d7);box-shadow:0 10px 28px #94732a0b}
+#panduan .section-head .kicker{display:inline-block;padding:5px 10px;border-radius:8px;background:#fff0c7;border:1px solid #e9d79e;color:#8e6b1e}
+#panduan .step{border:1px solid #cbded0;border-top:3px solid #1c9b64;background:linear-gradient(145deg,#fff,#effaf1);box-shadow:0 12px 28px #0a47300d}
+#panduan .step:nth-child(2){border-top-color:#d0ad4e;background:linear-gradient(145deg,#fffdf7,#fff6dc)}
+#panduan .step:nth-child(3){border-top-color:#63b99a;background:linear-gradient(145deg,#fff,#e9f8f0)}
+.panel,.work-card,.step,.section-head,.gallery-tools{transition:border-color .22s,box-shadow .22s,transform .22s}
+.panel:hover{border-color:#8acba1;box-shadow:0 20px 48px #0b5b4517}
+#kirim input:hover,#kirim select:hover,#kirim textarea:hover{border-color:#9acdad}
+#galeri .gallery-tools input:focus,#galeri .gallery-tools select:focus{border-color:#c7a34d;box-shadow:0 0 0 4px #d7b66d22}
+footer{border-top:4px solid #65f5a8;background:linear-gradient(120deg,#052c23,#073f32 60%,#0b5b45)}
+@media(max-width:500px){#kirim .section-head,#galeri .section-head,#panduan .section-head{padding:17px;border-radius:15px}}
+
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media(max-width:760px){.nav{min-height:70px;flex-wrap:wrap;padding:10px 0}.navlinks{display:flex;order:3;width:100%;justify-content:center;gap:18px;padding:4px 0 8px;font-size:13px}.nav>.btn{padding:10px 12px;font-size:12px}.hero{padding:54px 0}.hero-grid{grid-template-columns:1fr;gap:27px}h1{letter-spacing:-1.6px}.art{min-height:285px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}section{padding:54px 0}}
 @media(max-width:500px){section{padding:44px 0}.cards,.form-grid,.steps{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:19px}.gallery-tools>*{width:100%!important}.cover{height:225px}.hero p{font-size:16px}.art{padding:24px}.footer-row{flex-direction:column}.brand{gap:9px}.logo{width:40px;height:40px}}
@@ -118,8 +147,8 @@ const guideSection = $("panduan");
 function showSelectedSection(target) {
   submissionSection.hidden = target !== "#kirim";
   gallerySection.hidden = target !== "#galeri";
-  // Panduan ditampilkan bersama formulir Kirim Karya, dan juga melalui menu Panduan.
-  guideSection.hidden = target !== "#kirim" && target !== "#panduan";
+  // Panduan hanya tampil jika tautan/menu Panduan yang dipilih.
+  guideSection.hidden = target !== "#panduan";
 }
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", () => {
