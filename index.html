@@ -4,157 +4,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101027">
-<meta name="description" content="Dakwah Muda Creative Hub — wadah berbagi karya dan inspirasi dakwah.">
+<meta name="theme-color" content="#0b0b1b">
+<meta name="description" content="Dakwah Muda Creative Hub, ruang berbagi karya dakwah kreatif.">
 <title>Dakwah Muda — Creative Hub</title>
+
 <style>
 :root{
-  --bg:#0b0b1b;--panel:#15152b;--panel2:#1c1c37;
-  --text:#f7f7ff;--muted:#aaaac7;
-  --purple:#9b78ff;--cyan:#48e0e8;--pink:#ff7cbd;
+  --bg:#0b0b1b;
+  --panel:#15152b;
+  --panel2:#1c1c37;
+  --text:#f7f7ff;
+  --muted:#aaaac7;
+  --purple:#9b78ff;
+  --cyan:#48e0e8;
+  --pink:#ff7cbd;
   --border:rgba(255,255,255,.10);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--bg);color:var(--text);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
   line-height:1.65;
 }
 button,input,select,textarea{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
 a{color:inherit;text-decoration:none}
 .container{width:min(1120px,92%);margin:auto}
 header{
-  position:sticky;top:0;z-index:10;
-  background:rgba(11,11,27,.88);backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border)
+  position:sticky;top:0;z-index:20;
+  background:rgba(11,11,27,.90);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
 }
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.5px}
+.nav{
+  min-height:70px;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}
 .logo{
-  width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
-  color:#101027;font-size:22px;
-  background:linear-gradient(135deg,var(--cyan),var(--purple))
+  width:42px;height:42px;border-radius:14px;
+  display:grid;place-items:center;color:#101027;font-size:23px;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));
 }
-.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.5px}
-.navlinks{display:flex;gap:23px;color:#d4d2ec;font-size:14px}
+.brand small{
+  display:block;font-size:10px;color:var(--muted);
+  letter-spacing:2px;font-weight:600;
+}
+.navlinks{display:flex;gap:22px;color:#d4d2ec;font-size:14px}
 .navlinks a:hover{color:var(--cyan)}
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  border:0;border-radius:13px;padding:12px 19px;cursor:pointer;
-  font-weight:750;transition:.2s;
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;padding:12px 18px;border:0;border-radius:13px;
+  font-weight:800;cursor:pointer;transition:.2s;
 }
-.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.primary{color:#101027;background:linear-gradient(110deg,var(--cyan),#b2a0ff)}
-.secondary{background:#242440;color:white;border:1px solid var(--border)}
+.btn:hover{transform:translateY(-2px)}
+.primary{
+  color:#101027;
+  background:linear-gradient(110deg,var(--cyan),#b2a0ff);
+}
+.secondary{color:white;background:#242440;border:1px solid var(--border)}
 .btn:disabled{opacity:.55;cursor:wait;transform:none}
 .hero{
-  padding:88px 0 68px;position:relative;overflow:hidden;
-  background:radial-gradient(ellipse at 78% 20%,rgba(135,90,255,.20),transparent 38%),
-  radial-gradient(ellipse at 10% 70%,rgba(41,220,224,.11),transparent 35%)
+  padding:85px 0 65px;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 80% 20%,rgba(135,90,255,.22),transparent 38%),
+    radial-gradient(ellipse at 10% 70%,rgba(41,220,224,.12),transparent 35%);
 }
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:45px;
+}
 .eyebrow{
-  display:inline-flex;gap:8px;align-items:center;
-  border:1px solid #3b365d;background:#17162e;
-  border-radius:99px;padding:7px 13px;font-size:12px;color:#d5c9ff
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 13px;border:1px solid #3b365d;
+  border-radius:99px;background:#17162e;
+  color:#d5c9ff;font-size:12px;
 }
 .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan)}
-h1{font-size:clamp(40px,6vw,72px);line-height:1.05;letter-spacing:-3px;margin:22px 0}
-.gradient{
-  background:linear-gradient(100deg,var(--cyan),#a995ff 55%,var(--pink));
-  -webkit-background-clip:text;background-clip:text;color:transparent
+h1{
+  font-size:clamp(40px,6vw,72px);line-height:1.06;
+  letter-spacing:-3px;margin:22px 0;
 }
-.hero p{max-width:590px;color:var(--muted);font-size:17px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.gradient{
+  color:var(--cyan);
+  background:linear-gradient(100deg,var(--cyan),#a995ff 55%,var(--pink));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero p{max-width:580px;color:var(--muted);font-size:17px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
 .hero-art{
-  min-height:330px;border:1px solid var(--border);border-radius:30px;
-  background:linear-gradient(145deg,#242048,#11152b 65%);
-  padding:28px;display:flex;flex-direction:column;justify-content:space-between;
-  box-shadow:0 30px 100px #080817;
-  position:relative;overflow:hidden
+  min-height:330px;padding:28px;border:1px solid var(--border);
+  border-radius:28px;background:linear-gradient(145deg,#242048,#11152b 65%);
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
 }
 .hero-art:before{
-  content:"";position:absolute;width:240px;height:240px;right:-65px;top:-70px;
-  background:var(--purple);filter:blur(90px);opacity:.45
+  content:"";position:absolute;width:240px;height:240px;
+  right:-60px;top:-60px;background:var(--purple);
+  filter:blur(90px);opacity:.45;
 }
-.art-icon{font-size:70px;position:relative}
-.art-label{position:relative}
+.art-icon{font-size:72px;position:relative}
+.art-label,.art-tags{position:relative}
 .art-label strong{display:block;font-size:27px}
 .art-label span{color:var(--muted)}
-.art-tags{display:flex;gap:8px;flex-wrap:wrap;position:relative}
-.art-tags span{padding:6px 10px;border-radius:9px;background:#ffffff0e;font-size:12px}
-section{padding:68px 0}
-.section-head{margin-bottom:27px}
-.kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.art-tags{display:flex;gap:8px;flex-wrap:wrap}
+.art-tags span{padding:6px 10px;background:#ffffff0e;border-radius:9px;font-size:12px}
+section{padding:65px 0}
+.section-head{margin-bottom:25px}
+.kicker{color:var(--cyan);font-size:12px;font-weight:850;letter-spacing:2px}
 h2{font-size:clamp(27px,4vw,39px);line-height:1.2;letter-spacing:-1px;margin:8px 0}
 .section-head p{color:var(--muted);margin:8px 0}
 .panel{
+  padding:27px;border:1px solid var(--border);border-radius:23px;
   background:linear-gradient(145deg,#17172e,#111124);
-  border:1px solid var(--border);border-radius:23px;padding:27px
 }
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}
-.field{display:flex;flex-direction:column;gap:8px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
 .field.full{grid-column:1/-1}
-label{font-size:13px;font-weight:700;color:#e5e3fa}
+label{font-size:13px;font-weight:750;color:#e5e3fa}
 input,select,textarea{
   width:100%;padding:13px 14px;color:var(--text);
-  background:#0c0c1e;border:1px solid #30304d;border-radius:12px;outline:none
+  background:#0c0c1e;border:1px solid #30304d;
+  border-radius:12px;outline:none;
 }
-input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #48e0e815}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--cyan);box-shadow:0 0 0 3px #48e0e815;
+}
 input[type=file]{font-size:12px}
-textarea{resize:vertical;min-height:100px}
+textarea{min-height:100px;resize:vertical}
 .hint{font-size:12px;color:var(--muted)}
 .consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted)}
 .consent input{width:auto;margin-top:5px}
-#formMessage{margin-top:14px;font-size:14px;overflow-wrap:anywhere}
-.success{color:var(--cyan)}.error{color:#ff8f9d}
-.gallery-tools{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+#formMessage{font-size:14px;overflow-wrap:anywhere}
+.success{color:var(--cyan)}
+.error{color:#ff8f9d}
+.gallery-tools{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
 .gallery-tools input{flex:1;min-width:190px}
 .gallery-tools select{width:auto;min-width:170px}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .work-card{
-  overflow:hidden;border:1px solid var(--border);border-radius:18px;
-  background:var(--panel);display:flex;flex-direction:column;min-width:0
+  min-width:0;overflow:hidden;border:1px solid var(--border);
+  border-radius:18px;background:var(--panel);
+  display:flex;flex-direction:column;
 }
 .work-cover{
-  height:150px;display:grid;place-items:center;font-size:48px;
-  background:radial-gradient(circle at 70% 30%,#5b438d,#242143 60%,#15152b)
+  height:200px;position:relative;overflow:hidden;
+  display:grid;place-items:center;font-size:48px;
+  background:radial-gradient(circle at 70% 30%,#5b438d,#242143 60%,#15152b);
 }
-.work-body{padding:18px;display:flex;flex-direction:column;flex:1}
-.category{color:var(--cyan);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.work-cover.has-image{background:#101020}
+.work-cover img{
+  width:100%;height:100%;display:block;object-fit:cover;
+  object-position:center;
+}
+.preview-fallback{
+  position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;flex-direction:column;gap:8px;
+  padding:15px;text-align:center;background:#17172e;
+}
+.preview-fallback span{font-size:40px}
+.preview-fallback small{font-size:11px;color:var(--muted)}
+.work-body{
+  padding:18px;display:flex;flex-direction:column;flex:1;min-width:0;
+}
+.category{
+  color:var(--cyan);font-size:11px;font-weight:850;
+  text-transform:uppercase;letter-spacing:1px;
+}
 .work-body h3{margin:8px 0;font-size:18px;line-height:1.35;overflow-wrap:anywhere}
 .work-body p{color:var(--muted);font-size:13px;margin:0 0 15px;overflow-wrap:anywhere}
 .work-meta{font-size:12px;color:#c4c1df;margin-top:auto;margin-bottom:14px}
-.work-link{color:var(--cyan);font-weight:750;font-size:13px}
+.work-link{color:var(--cyan);font-weight:800;font-size:13px}
 .empty{
-  grid-column:1/-1;text-align:center;padding:40px 18px;
-  border:1px dashed #41405d;border-radius:18px;color:var(--muted)
+  grid-column:1/-1;text-align:center;padding:38px 18px;
+  border:1px dashed #41405d;border-radius:18px;color:var(--muted);
 }
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
 .step{padding:22px;border-radius:18px;background:var(--panel);border:1px solid var(--border)}
 .step-icon{font-size:27px}
 .step h3{margin:9px 0 5px}
 .step p{font-size:13px;color:var(--muted);margin:0}
-footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font-size:12px}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:12px}
 .footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 [hidden]{display:none!important}
 @media(max-width:760px){
- .nav{height:64px}.navlinks{display:none}
- .hero{padding:54px 0 40px}.hero-grid{grid-template-columns:1fr;gap:28px}
- h1{letter-spacing:-1.8px}.hero-art{min-height:270px}
- section{padding:48px 0}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}
- .steps{grid-template-columns:1fr}.panel{padding:19px}
+  .nav{min-height:64px}.navlinks{display:none}
+  .hero{padding:53px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:27px}
+  h1{letter-spacing:-1.8px}
+  .hero-art{min-height:260px}
+  section{padding:47px 0}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .panel{padding:19px}
 }
 @media(max-width:490px){
- .cards{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}
- .field.full{grid-column:auto}.hero-actions .btn{flex:1}
- .gallery-tools>*{width:100%!important}
+  .cards,.form-grid,.steps{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .gallery-tools>*{width:100%!important}
+  .hero-actions .btn{flex:1}
+  .work-cover{height:220px}
 }
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+}
 </style>
 </head>
+
 <body>
 <header>
   <div class="container nav">
@@ -173,132 +229,164 @@ footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font
 
 <main>
 <section class="hero" id="beranda">
- <div class="container hero-grid">
-  <div>
-    <span class="eyebrow"><span class="dot"></span> RUANG KREATIF GENERASI MUDA</span>
-    <h1>Sebarkan Kebaikan.<br><span class="gradient">Ciptakan Dampak.</span></h1>
-    <p>Wadah kreatif untuk berbagi pesan dakwah melalui tulisan, poster, video, desain, dan karya inspiratif lainnya. Ide baikmu layak menjangkau lebih banyak orang.</p>
-    <div class="hero-actions">
-      <a class="btn primary" href="#kirim">Mulai Berkarya ↗</a>
-      <a class="btn secondary" href="#galeri">Jelajahi Karya ↓</a>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> RUANG KREATIF GENERASI MUDA</span>
+      <h1>Sebarkan Kebaikan.<br><span class="gradient">Ciptakan Dampak.</span></h1>
+      <p>Wadah kreatif untuk berbagi pesan dakwah melalui tulisan, poster, video, desain, dan karya inspiratif lainnya. Ide baikmu layak menjangkau lebih banyak orang.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#kirim">Mulai Berkarya ↗</a>
+        <a class="btn secondary" href="#galeri">Jelajahi Karya ↓</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="art-icon">🌙</div>
+      <div class="art-label">
+        <strong>Your Idea. Your Voice.</strong>
+        <span>Inspirasi hari ini, perubahan esok hari.</span>
+      </div>
+      <div class="art-tags">
+        <span>✦ Kreatif</span><span>♡ Inspiratif</span><span>↗ Berdampak</span>
+      </div>
     </div>
   </div>
-  <div class="hero-art">
-    <div class="art-icon">🌙</div>
-    <div class="art-label">
-      <strong>Your Idea. Your Voice.</strong>
-      <span>Inspirasi hari ini, perubahan esok hari.</span>
-    </div>
-    <div class="art-tags"><span>✦ Kreatif</span><span>♡ Inspiratif</span><span>↗ Berdampak</span></div>
-  </div>
- </div>
 </section>
 
 <section id="kirim">
- <div class="container">
-  <div class="section-head">
-    <span class="kicker">01 / Submission</span>
-    <h2>Waktunya Karyamu Bersinar.</h2>
-    <p>Isi data berikut dan kirimkan karya terbaikmu untuk ditinjau oleh tim pengelola.</p>
-  </div>
-  <div class="panel">
-   <form id="submissionForm">
-    <div class="form-grid">
-      <div class="field">
-        <label for="name">Nama pengirim *</label>
-        <input id="name" maxlength="100" required placeholder="Nama lengkap">
-      </div>
-      <div class="field">
-        <label for="title">Judul karya *</label>
-        <input id="title" maxlength="180" required placeholder="Contoh: Kebaikan Dimulai dari Kita">
-      </div>
-      <div class="field">
-        <label for="category">Kategori karya *</label>
-        <select id="category" required>
-          <option value="">Pilih kategori</option>
-          <option>Tulisan</option><option>Poster & Desain</option>
-          <option>Video</option><option>Audio & Podcast</option>
-          <option>Infografis</option><option>Lainnya</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="file">Berkas karya *</label>
-        <input id="file" type="file" required
-          accept=".pdf,.jpg,.jpeg,.png,.webp,.mp3,.mp4,.doc,.docx">
-        <span class="hint">PDF, gambar, audio, video, atau dokumen. Maksimal 5 MB.</span>
-      </div>
-      <div class="field full">
-        <label for="description">Deskripsi karya</label>
-        <textarea id="description" maxlength="1200" placeholder="Ceritakan pesan utama atau inspirasi di balik karya ini."></textarea>
-      </div>
-      <div class="field full">
-        <label class="consent">
-          <input id="consent" type="checkbox" required>
-          <span>Saya menyatakan karya ini layak ditinjau, tidak melanggar hak cipta, dan bersedia karya ditampilkan apabila disetujui pengelola.</span>
-        </label>
-      </div>
-      <div class="field full">
-        <button class="btn primary" id="submitButton" type="submit">Kirim Karya ↗</button>
-        <div id="formMessage" role="status" aria-live="polite"></div>
-      </div>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">01 / SUBMISSION</span>
+      <h2>Waktunya Karyamu Bersinar.</h2>
+      <p>Lengkapi formulir dan kirimkan karya terbaikmu untuk ditinjau oleh pengelola.</p>
     </div>
-   </form>
-   <iframe name="uploadFrame" id="uploadFrame" title="Status pengiriman" hidden></iframe>
+
+    <div class="panel">
+      <form id="submissionForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Nama pengirim *</label>
+            <input id="name" maxlength="100" required placeholder="Nama lengkap">
+          </div>
+
+          <div class="field">
+            <label for="title">Judul karya *</label>
+            <input id="title" maxlength="180" required placeholder="Judul konten dakwah">
+          </div>
+
+          <div class="field">
+            <label for="category">Kategori *</label>
+            <select id="category" required>
+              <option value="">Pilih kategori</option>
+              <option>Tulisan</option>
+              <option>Poster & Desain</option>
+              <option>Video</option>
+              <option>Audio & Podcast</option>
+              <option>Infografis</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="file">Berkas karya *</label>
+            <input id="file" type="file" required
+              accept=".pdf,.jpg,.jpeg,.png,.webp,.mp3,.mp4,.doc,.docx">
+            <span class="hint">PDF, gambar, audio, video, atau dokumen. Maksimal 5 MB.</span>
+          </div>
+
+          <div class="field full">
+            <label for="description">Deskripsi karya</label>
+            <textarea id="description" maxlength="1200" placeholder="Ceritakan pesan utama atau inspirasi karya ini."></textarea>
+          </div>
+
+          <div class="field full">
+            <label class="consent">
+              <input id="consent" type="checkbox" required>
+              <span>Saya menyatakan karya ini layak ditinjau, tidak melanggar hak cipta, dan bersedia karya ditampilkan apabila disetujui pengelola.</span>
+            </label>
+          </div>
+
+          <div class="field full">
+            <button class="btn primary" id="submitButton" type="submit">Kirim Karya ↗</button>
+            <div id="formMessage" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </form>
+
+      <iframe name="uploadFrame" id="uploadFrame"
+        title="Konfirmasi pengiriman karya" hidden></iframe>
+    </div>
   </div>
- </div>
 </section>
 
 <section id="galeri">
- <div class="container">
-  <div class="section-head">
-    <span class="kicker">02 / Community Gallery</span>
-    <h2>Karya yang Menginspirasi.</h2>
-    <p>Jelajahi karya yang telah ditinjau dan diterbitkan oleh pengelola.</p>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">02 / COMMUNITY GALLERY</span>
+      <h2>Karya yang Menginspirasi.</h2>
+      <p>Temukan karya yang telah disetujui dan diterbitkan oleh pengelola.</p>
+    </div>
+
+    <div class="gallery-tools">
+      <input id="searchInput" type="search" placeholder="Cari judul atau nama pembuat..." aria-label="Cari karya">
+      <select id="filterCategory" aria-label="Filter kategori">
+        <option value="">Semua kategori</option>
+        <option>Tulisan</option>
+        <option>Poster & Desain</option>
+        <option>Video</option>
+        <option>Audio & Podcast</option>
+        <option>Infografis</option>
+        <option>Lainnya</option>
+      </select>
+      <button class="btn secondary" id="refreshButton" type="button">↻ Muat Ulang</button>
+    </div>
+
+    <div id="galleryStatus" class="hint" role="status" aria-live="polite">Menghubungkan ke galeri...</div>
+    <div id="galleryCards" class="cards" style="margin-top:18px">
+      <div class="empty">Memuat karya...</div>
+    </div>
   </div>
-  <div class="gallery-tools">
-    <input id="searchInput" type="search" placeholder="Cari judul atau nama pembuat..." aria-label="Cari karya">
-    <select id="filterCategory" aria-label="Filter kategori">
-      <option value="">Semua kategori</option>
-      <option>Tulisan</option><option>Poster & Desain</option>
-      <option>Video</option><option>Audio & Podcast</option>
-      <option>Infografis</option><option>Lainnya</option>
-    </select>
-    <button class="btn secondary" id="refreshButton" type="button">↻ Muat Ulang</button>
-  </div>
-  <div id="galleryStatus" class="hint" role="status" aria-live="polite">Menghubungkan ke galeri...</div>
-  <div class="cards" id="galleryCards" style="margin-top:18px">
-    <div class="empty">Karya yang sudah diterbitkan akan tampil di sini.</div>
-  </div>
- </div>
 </section>
 
 <section id="alur">
- <div class="container">
-  <div class="section-head">
-    <span class="kicker">03 / How It Works</span>
-    <h2>Langkah Mudah, Dampak Nyata.</h2>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">03 / HOW IT WORKS</span>
+      <h2>Langkah Mudah, Dampak Nyata.</h2>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="step-icon">✍️</div>
+        <h3>01. Buat Karya</h3>
+        <p>Siapkan konten dakwah yang kreatif, santun, dan bermanfaat.</p>
+      </article>
+      <article class="step">
+        <div class="step-icon">🚀</div>
+        <h3>02. Kirim Karya</h3>
+        <p>Isi formulir dan unggah berkas. Tim akan meninjau kirimanmu.</p>
+      </article>
+      <article class="step">
+        <div class="step-icon">✨</div>
+        <h3>03. Sebarkan Inspirasi</h3>
+        <p>Karya yang disetujui akan diterbitkan di galeri publik.</p>
+      </article>
+    </div>
   </div>
-  <div class="steps">
-    <article class="step"><div class="step-icon">✍️</div><h3>01. Buat Karya</h3><p>Siapkan konten dakwah yang kreatif, santun, dan bermanfaat.</p></article>
-    <article class="step"><div class="step-icon">🚀</div><h3>02. Kirim Karya</h3><p>Isi formulir dan unggah berkas. Tim pengelola akan meninjau kirimanmu.</p></article>
-    <article class="step"><div class="step-icon">✨</div><h3>03. Sebarkan Inspirasi</h3><p>Karya yang disetujui akan diterbitkan dan dapat dilihat di galeri.</p></article>
-  </div>
- </div>
 </section>
 </main>
 
 <footer>
- <div class="container footer-row">
-  <span>© <span id="year"></span> Dakwah Muda Creative Hub</span>
-  <span>Dibuat untuk berbagi kebaikan ✦</span>
- </div>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Dakwah Muda Creative Hub</span>
+    <span>Dibuat untuk berbagi kebaikan ✦</span>
+  </div>
 </footer>
 
 <script>
 "use strict";
 
-// GANTI dengan URL Web App Google Apps Script Anda.
-const API_URL = "https://script.google.com/macros/s/AKfycbxvibrnMM72UX0q8oURgBkgCTracqLhxCQARrwnfBL_tXTdxEobQwW6pxS6eRXL4sNMyw/exec";
+// WAJIB: ganti dengan URL deployment Web App yang berakhir /exec.
+const API_URL = "TEMPEL_URL_WEB_APP_ANDA";
+
 const MAX_BYTES = 5 * 1024 * 1024;
 const ALLOWED_EXT = [
   "pdf","jpg","jpeg","png","webp","mp3","mp4","doc","docx"
@@ -309,38 +397,16 @@ const form = $("submissionForm");
 const submitButton = $("submitButton");
 const formMessage = $("formMessage");
 const galleryCards = $("galleryCards");
+
 let publishedWorks = [];
+let uploadPending = false;
+let uploadTimeout = null;
 
 $("year").textContent = new Date().getFullYear();
 
 function setMessage(message, type="") {
   formMessage.textContent = message;
   formMessage.className = type;
-}
-
-function jsonp(action) {
-  return new Promise((resolve, reject) => {
-    if (!API_URL.startsWith("https://script.google.com/")) {
-      reject(new Error("URL Web App belum dikonfigurasi."));
-      return;
-    }
-    const callback = "dakwahCallback_" + Date.now() + "_" +
-      Math.random().toString(36).slice(2);
-    const script = document.createElement("script");
-    const timer = setTimeout(() => finish(new Error("Waktu koneksi habis.")), 20000);
-
-    function finish(error, data) {
-      clearTimeout(timer);
-      delete window[callback];
-      script.remove();
-      error ? reject(error) : resolve(data);
-    }
-    window[callback] = data => finish(null, data);
-    script.onerror = () => finish(new Error("Galeri gagal dimuat."));
-    script.src = API_URL + "?action=" + encodeURIComponent(action) +
-      "&callback=" + encodeURIComponent(callback) + "&t=" + Date.now();
-    document.body.appendChild(script);
-  });
 }
 
 function makeElement(tag, className, text) {
@@ -350,66 +416,203 @@ function makeElement(tag, className, text) {
   return el;
 }
 
+function getFileId(url) {
+  const value = String(url || "");
+  const patterns = [
+    /drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/,
+    /drive\.google\.com\/thumbnail\?id=([a-zA-Z0-9_-]+)/,
+    /[?&]id=([a-zA-Z0-9_-]+)/
+  ];
+
+  for (const pattern of patterns) {
+    const match = value.match(pattern);
+    if (match) return match[1];
+  }
+  return "";
+}
+
+function getPreviewUrl(work) {
+  const fileId = getFileId(work.fileUrl);
+  if (!fileId) return "";
+  return "https://drive.google.com/thumbnail?id=" +
+    encodeURIComponent(fileId) + "&sz=w900";
+}
+
+function isImageWork(work) {
+  const mime = String(work.mimeType || "").toLowerCase();
+  const name = String(work.fileName || "").toLowerCase();
+  return /^image\/(jpeg|png|webp|gif)$/.test(mime) ||
+    /\.(jpg|jpeg|png|webp|gif)$/.test(name);
+}
+
+function isPdfWork(work) {
+  return String(work.mimeType || "").toLowerCase() === "application/pdf" ||
+    /\.pdf$/i.test(work.fileName || "");
+}
+
+function getWorkIcon(work) {
+  const categoryIcons = {
+    "Tulisan":"✍️",
+    "Poster & Desain":"🎨",
+    "Video":"🎬",
+    "Audio & Podcast":"🎧",
+    "Infografis":"📊",
+    "Lainnya":"✦"
+  };
+
+  const mime = String(work.mimeType || "").toLowerCase();
+  const name = String(work.fileName || "").toLowerCase();
+
+  if (isPdfWork(work)) return "📄";
+  if (mime.startsWith("video/") || /\.mp4$/i.test(name)) return "🎬";
+  if (mime.startsWith("audio/") || /\.mp3$/i.test(name)) return "🎧";
+  return categoryIcons[work.category] || "✦";
+}
+
+function createFallback(cover, work) {
+  cover.classList.remove("has-image");
+  cover.replaceChildren();
+
+  const fallback = makeElement("div", "preview-fallback");
+  fallback.append(makeElement("span", "", getWorkIcon(work)));
+  fallback.append(makeElement(
+    "small", "",
+    isImageWork(work)
+      ? "Pratinjau tidak tersedia — buka karya"
+      : "Buka berkas untuk melihat karya"
+  ));
+  cover.append(fallback);
+}
+
 function renderGallery() {
-  const q = $("searchInput").value.trim().toLocaleLowerCase("id");
-  const cat = $("filterCategory").value;
-  const results = publishedWorks.filter(work =>
-    (!cat || work.category === cat) &&
-    ((work.title || "").toLocaleLowerCase("id").includes(q) ||
-     (work.name || "").toLocaleLowerCase("id").includes(q) ||
-     (work.description || "").toLocaleLowerCase("id").includes(q))
-  );
+  const query = $("searchInput").value.trim().toLocaleLowerCase("id");
+  const category = $("filterCategory").value;
+
+  const results = publishedWorks.filter(work => {
+    const matchesCategory = !category || work.category === category;
+    const searchable = [
+      work.title, work.name, work.description, work.category
+    ].join(" ").toLocaleLowerCase("id");
+    return matchesCategory && searchable.includes(query);
+  });
 
   galleryCards.replaceChildren();
+
   if (!results.length) {
-    galleryCards.append(makeElement("div", "empty",
-      publishedWorks.length ? "Tidak ada karya yang cocok." :
-      "Belum ada karya yang diterbitkan."));
+    galleryCards.append(makeElement(
+      "div", "empty",
+      publishedWorks.length
+        ? "Tidak ada karya yang cocok dengan pencarian."
+        : "Belum ada karya yang diterbitkan."
+    ));
     return;
   }
 
-  const icons = {
-    "Tulisan":"✍️","Poster & Desain":"🎨","Video":"🎬",
-    "Audio & Podcast":"🎧","Infografis":"📊","Lainnya":"✦"
-  };
-
   results.forEach(work => {
     const card = makeElement("article", "work-card");
-    card.append(makeElement("div", "work-cover", icons[work.category] || "✦"));
+    const cover = makeElement("div", "work-cover");
+    const previewUrl = getPreviewUrl(work);
+
+    if (isImageWork(work) && previewUrl) {
+      cover.classList.add("has-image");
+
+      const img = document.createElement("img");
+      img.src = previewUrl;
+      img.alt = "Pratinjau " + (work.title || "karya");
+      img.loading = "lazy";
+      img.referrerPolicy = "no-referrer";
+
+      img.addEventListener("error", () => createFallback(cover, work), {once:true});
+      cover.append(img);
+    } else {
+      createFallback(cover, work);
+    }
+
     const body = makeElement("div", "work-body");
     body.append(makeElement("span", "category", work.category || "Karya"));
     body.append(makeElement("h3", "", work.title || "Tanpa judul"));
-    body.append(makeElement("p", "", work.description || "Karya dakwah komunitas."));
-    body.append(makeElement("div", "work-meta", "Oleh " + (work.name || "Anonim")));
+    body.append(makeElement(
+      "p", "", work.description || "Karya dakwah komunitas."
+    ));
+    body.append(makeElement(
+      "div", "work-meta", "Oleh " + (work.name || "Anonim")
+    ));
 
     const link = makeElement("a", "work-link", "Lihat Karya ↗");
-    link.href = work.fileUrl;
+    link.href = work.fileUrl || "#";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
+    if (!work.fileUrl) link.setAttribute("aria-disabled", "true");
+
     body.append(link);
-    card.append(body);
+    card.append(cover, body);
     galleryCards.append(card);
   });
 }
 
+function jsonp(action) {
+  return new Promise((resolve, reject) => {
+    if (!API_URL.startsWith("https://script.google.com/")) {
+      reject(new Error("URL Web App belum dipasang pada index.html."));
+      return;
+    }
+
+    const callback = "dakwahCallback_" +
+      Date.now() + "_" + Math.random().toString(36).slice(2);
+    const script = document.createElement("script");
+    let finished = false;
+
+    const timer = setTimeout(
+      () => finish(new Error("Koneksi galeri melewati batas waktu.")),
+      20000
+    );
+
+    function finish(error, data) {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timer);
+      delete window[callback];
+      script.remove();
+      error ? reject(error) : resolve(data);
+    }
+
+    window[callback] = data => finish(null, data);
+    script.onerror = () => finish(
+      new Error("Galeri gagal dimuat. Periksa URL dan akses Web App.")
+    );
+
+    script.src = API_URL +
+      "?action=" + encodeURIComponent(action) +
+      "&callback=" + encodeURIComponent(callback) +
+      "&t=" + Date.now();
+
+    document.body.append(script);
+  });
+}
+
 async function loadGallery() {
-  $("galleryStatus").textContent = "Memuat karya terbit...";
-  $("refreshButton").disabled = true;
+  const refresh = $("refreshButton");
+  refresh.disabled = true;
+  $("galleryStatus").textContent = "Memuat karya yang telah diterbitkan...";
+
   try {
     const result = await jsonp("list");
+
     if (!result || !result.ok || !Array.isArray(result.works)) {
-      throw new Error(result?.message || "Respons galeri tidak valid.");
+      throw new Error(result?.message || "Data galeri tidak valid.");
     }
+
     publishedWorks = result.works;
     renderGallery();
     $("galleryStatus").textContent =
       publishedWorks.length + " karya diterbitkan.";
   } catch (error) {
-    $("galleryStatus").textContent =
-      "Galeri belum dapat dimuat. Periksa URL Web App dan akses publik.";
-    galleryCards.replaceChildren(makeElement("div", "empty", error.message));
+    $("galleryStatus").textContent = "Galeri belum dapat dimuat.";
+    galleryCards.replaceChildren(makeElement(
+      "div", "empty", error.message || "Terjadi kesalahan koneksi."
+    ));
   } finally {
-    $("refreshButton").disabled = false;
+    refresh.disabled = false;
   }
 }
 
@@ -417,13 +620,13 @@ $("searchInput").addEventListener("input", renderGallery);
 $("filterCategory").addEventListener("change", renderGallery);
 $("refreshButton").addEventListener("click", loadGallery);
 
-let uploadPending = false;
 window.addEventListener("message", event => {
-  // Hanya terima pesan bertanda dari halaman respons backend.
+  if (event.source !== $("uploadFrame").contentWindow) return;
   if (!event.data || event.data.source !== "dakwah-muda-upload") return;
   if (!uploadPending) return;
 
   uploadPending = false;
+  clearTimeout(uploadTimeout);
   submitButton.disabled = false;
   submitButton.textContent = "Kirim Karya ↗";
 
@@ -432,8 +635,8 @@ window.addEventListener("message", event => {
     form.reset();
     loadGallery();
   } else {
-    setMessage("Pengiriman gagal: " + (event.data.message || "Silakan coba lagi."),
-      "error");
+    setMessage("Pengiriman gagal: " +
+      (event.data.message || "Silakan coba kembali."), "error");
   }
 });
 
@@ -441,20 +644,23 @@ form.addEventListener("submit", async event => {
   event.preventDefault();
   if (uploadPending) return;
 
-  if (!API_URL.startsWith("https://script.google.com/")) {
-    setMessage("Admin belum memasang URL Web App pada index.html.", "error");
+  if (!API_URL.startsWith("https://script.google.com/") ||
+      !API_URL.endsWith("/exec")) {
+    setMessage("URL Web App belum benar. Periksa konfigurasi API_URL.", "error");
     return;
   }
 
   const file = $("file").files[0];
   if (!file) {
-    setMessage("Pilih berkas karya terlebih dahulu.", "error");
+    setMessage("Silakan pilih berkas karya.", "error");
     return;
   }
-  if (file.size > MAX_BYTES) {
-    setMessage("Ukuran berkas melebihi batas 5 MB.", "error");
+
+  if (file.size === 0 || file.size > MAX_BYTES) {
+    setMessage("Berkas harus berukuran lebih dari 0 dan maksimal 5 MB.", "error");
     return;
   }
+
   const ext = file.name.split(".").pop().toLowerCase();
   if (!ALLOWED_EXT.includes(ext)) {
     setMessage("Jenis berkas belum didukung.", "error");
@@ -462,11 +668,11 @@ form.addEventListener("submit", async event => {
   }
 
   submitButton.disabled = true;
-  submitButton.textContent = "Menyiapkan karya...";
-  setMessage("Berkas sedang diproses. Jangan tutup halaman ini.");
+  submitButton.textContent = "Membaca berkas...";
+  setMessage("Menyiapkan berkas untuk dikirim...");
 
   try {
-    const fileData = await new Promise((resolve, reject) => {
+    const dataUrl = await new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result);
       reader.onerror = () => reject(new Error("Berkas gagal dibaca."));
@@ -480,16 +686,13 @@ form.addEventListener("submit", async event => {
       description: $("description").value.trim(),
       fileName: file.name,
       mimeType: file.type || "application/octet-stream",
-      fileData: fileData
+      fileData: dataUrl
     };
 
-    // POST memakai form ke iframe agar tidak terhalang pembacaan
-    // respons lintas domain pada GitHub Pages.
-    let iframe = $("uploadFrame");
-    let postForm = document.createElement("form");
+    const postForm = document.createElement("form");
     postForm.method = "POST";
     postForm.action = API_URL;
-    postForm.target = iframe.name;
+    postForm.target = "uploadFrame";
     postForm.style.display = "none";
 
     const field = document.createElement("input");
@@ -501,24 +704,29 @@ form.addEventListener("submit", async event => {
 
     uploadPending = true;
     submitButton.textContent = "Mengirim karya...";
-    setMessage("Mengunggah karya ke Google Drive...");
+    setMessage("Mengunggah karya ke Google Drive. Mohon tunggu.");
+
+    document.body.append(postForm);
     postForm.submit();
     postForm.remove();
 
-    // Pengaman bila backend tidak mengirim respons.
-    setTimeout(() => {
+    uploadTimeout = setTimeout(() => {
       if (!uploadPending) return;
+
       uploadPending = false;
       submitButton.disabled = false;
       submitButton.textContent = "Kirim Karya ↗";
-      setMessage("Belum menerima konfirmasi. Periksa Google Sheets sebelum mengirim ulang.",
-        "error");
-    }, 45000);
+      setMessage(
+        "Konfirmasi belum diterima. Periksa Google Sheets dan Google Drive sebelum mengirim ulang.",
+        "error"
+      );
+    }, 60000);
+
   } catch (error) {
     uploadPending = false;
     submitButton.disabled = false;
     submitButton.textContent = "Kirim Karya ↗";
-    setMessage(error.message || "Terjadi kesalahan saat membaca berkas.", "error");
+    setMessage(error.message || "Terjadi kesalahan saat mengirim.", "error");
   }
 });
 
