@@ -43,6 +43,11 @@ footer{padding:35px 0;background:#062f26;color:#d2e7d8;font-size:12px;border-top
 #kirim input:hover,#kirim select:hover,#kirim textarea:hover{border-color:#9acdad}
 #galeri .gallery-tools input:focus,#galeri .gallery-tools select:focus{border-color:#c7a34d;box-shadow:0 0 0 4px #d7b66d22}
 footer{border-top:4px solid #65f5a8;background:linear-gradient(120deg,#052c23,#073f32 60%,#0b5b45)}
+
+/* Notifikasi jadwal pengiriman dua pekan setiap bulan */
+.submission-notice{margin-top:26px;padding:20px 22px;border:1px solid #b8dfc3;border-left:5px solid #d2ad52;border-radius:20px;background:linear-gradient(120deg,#ffffffed,#e7f8ec 62%,#fff7e5);box-shadow:0 14px 34px #0b5b4510;color:#123e30}
+.notice-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}.notice-symbol{width:44px;height:44px;display:grid;place-items:center;flex:0 0 auto;border-radius:14px;background:#d9f7e3;border:1px solid #b8e8c8;font-size:22px}.notice-title{font-weight:900;font-size:16px}.notice-subtitle{font-size:12px;color:#64766e}.notice-periods{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice-period{padding:13px 15px;border:1px solid #c9e4d0;border-radius:14px;background:#ffffffc9}.notice-period strong{display:block;color:#08784f;font-size:13px}.notice-period span{display:block;font-size:13px;margin-top:3px}.notice-current{margin-top:12px;padding:10px 13px;border-radius:12px;background:#073f32;color:#eaffef;font-size:13px}.notice-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:13px}.notice-actions .btn{font-size:12px;padding:10px 14px}.notice-status{font-size:12px;color:#64766e}
+@media(max-width:500px){.notice-periods{grid-template-columns:1fr}.submission-notice{padding:17px}}
 @media(max-width:500px){#kirim .section-head,#galeri .section-head,#panduan .section-head{padding:17px;border-radius:15px}}
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
@@ -67,6 +72,15 @@ footer{border-top:4px solid #65f5a8;background:linear-gradient(120deg,#052c23,#0
    <h1>Satu Karya,<br><span class="gradient">Sejuta Kebaikan.</span></h1>
    <p>Setiap ide memiliki makna. Setiap karya memiliki peluang untuk menginspirasi. Jadikan kreativitasmu sebagai jalan menyebarkan kebaikan melalui konten dakwah yang inspiratif dan bermanfaat.</p>
    <div class="actions"><a class="btn primary" href="#kirim">Mulai Berkarya ↗</a><a class="btn secondary" href="#galeri">Jelajahi Karya ↓</a></div>
+   <aside class="submission-notice" aria-labelledby="noticeTitle">
+    <div class="notice-top"><span class="notice-symbol" aria-hidden="true">🔔</span><div><div class="notice-title" id="noticeTitle">Pengingat Jadwal Pengiriman Karya</div><div class="notice-subtitle">Dua periode setiap bulan — jangan lewatkan jadwalmu.</div></div></div>
+    <div class="notice-periods">
+     <div class="notice-period"><strong>PERIODE 1 · DUA PEKAN PERTAMA</strong><span>Koordinator pengiriman: <b>Ridwan</b></span><span class="notice-subtitle">Tanggal 1–14 setiap bulan</span></div>
+     <div class="notice-period"><strong>PERIODE 2 · DUA PEKAN KEDUA</strong><span>Koordinator pengiriman: <b>Fadil</b></span><span class="notice-subtitle">Tanggal 15–akhir bulan</span></div>
+    </div>
+    <div class="notice-current" id="currentPeriodNotice" role="status" aria-live="polite">Memeriksa periode pengiriman...</div>
+    <div class="notice-actions"><button class="btn secondary" id="enableNotifications" type="button">🔔 Aktifkan Notifikasi</button><span class="notice-status" id="notificationStatus">Pengingat tampil di website. Aktifkan notifikasi browser untuk pemberitahuan saat situs terbuka.</span></div>
+   </aside>
   </div>
   <div class="art">
    <div class="art-icon">🌙</div>
@@ -162,6 +176,68 @@ let pollTimer = null;
 let timeoutTimer = null;
 
 $("year").textContent = new Date().getFullYear();
+
+// Jadwal berulang setiap bulan: tanggal 1–14 Ridwan, tanggal 15–akhir bulan Fadil.
+// Notifikasi browser memerlukan izin pengguna dan hanya berjalan saat halaman terbuka.
+function getSubmissionPeriod(date = new Date()) {
+  const day = date.getDate();
+  const month = date.toLocaleDateString("id-ID", { month: "long", year: "numeric" });
+  if (day <= 14) {
+    return { key: `${date.getFullYear()}-${date.getMonth()+1}-ridwan`, name: "Ridwan", label: "Periode 1 · Ridwan", range: "Tanggal 1–14", month, start: 1, end: 14 };
+  }
+  return { key: `${date.getFullYear()}-${date.getMonth()+1}-fadil`, name: "Fadil", label: "Periode 2 · Fadil", range: `Tanggal 15–${new Date(date.getFullYear(), date.getMonth()+1, 0).getDate()}`, month, start: 15, end: new Date(date.getFullYear(), date.getMonth()+1, 0).getDate() };
+}
+function notifyCurrentPeriodIfNeeded() {
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  const period = getSubmissionPeriod();
+  const key = `ruang-dakwah-notice-${period.key}`;
+  if (localStorage.getItem(key)) return;
+  try {
+    new Notification("Pengingat Pengiriman Karya — RUANG DAKWAH", {
+      body: `${period.label}. Koordinator: ${period.name}. Periode ini berlangsung ${period.range.toLowerCase()}. Mari kirim karya dakwah terbaikmu!`,
+      tag: key
+    });
+    localStorage.setItem(key, "shown");
+  } catch (error) { /* Notifikasi dapat diblokir oleh pengaturan browser. */ }
+}
+function updateSubmissionNotice() {
+  const now = new Date();
+  const period = getSubmissionPeriod(now);
+  const dayLeft = period.end - now.getDate();
+  const node = $("currentPeriodNotice");
+  if (node) node.textContent = `📅 ${period.month}: sekarang ${period.label} (${period.range}). ${dayLeft === 0 ? "Hari ini hari terakhir periode pengiriman." : `Sisa ${dayLeft} hari dalam periode ini.`}`;
+  const status = $("notificationStatus");
+  const button = $("enableNotifications");
+  if ("Notification" in window && Notification.permission === "granted") {
+    status.textContent = "Notifikasi browser aktif untuk pengingat saat website terbuka.";
+    button.textContent = "✓ Notifikasi Aktif";
+  } else if (!("Notification" in window)) {
+    status.textContent = "Browser ini tidak mendukung notifikasi. Jadwal tetap dapat dilihat di halaman ini.";
+    button.disabled = true;
+  }
+}
+async function enableSubmissionNotifications() {
+  const status = $("notificationStatus");
+  if (!("Notification" in window)) {
+    status.textContent = "Browser ini tidak mendukung notifikasi.";
+    return;
+  }
+  try {
+    const permission = await Notification.requestPermission();
+    if (permission !== "granted") {
+      status.textContent = "Izin notifikasi belum diberikan. Jadwal tetap tersedia di halaman Beranda.";
+      return;
+    }
+    updateSubmissionNotice();
+    notifyCurrentPeriodIfNeeded();
+    status.textContent = "Notifikasi diizinkan. Pengingat periode berjalan akan ditampilkan saat website dibuka.";
+  } catch (error) {
+    status.textContent = "Notifikasi tidak dapat diaktifkan di browser ini.";
+  }
+}
+$("enableNotifications").addEventListener("click", enableSubmissionNotifications);
+updateSubmissionNotice();
+notifyCurrentPeriodIfNeeded();
 
 function message(text, type="") {
   $("formMessage").textContent = text;
