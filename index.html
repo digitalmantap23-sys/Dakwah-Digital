@@ -4,133 +4,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b0b1b">
-<title>Dakwah Muda — Creative Hub</title>
+<meta name="theme-color" content="#073f32">
+<title>RUANG DAKWAH — Satu Karya, Sejuta Kebaikan</title>
 <style>
-:root{
-  --bg:#0b0b1b;--panel:#17172e;--text:#f7f7ff;
-  --muted:#aaaac7;--cyan:#48e0e8;--purple:#9b78ff;
-  --pink:#ff7cbd;--border:#ffffff19
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
-  line-height:1.65
-}
-button,input,select,textarea{font:inherit}
-a{color:inherit;text-decoration:none}
-.container{width:min(1120px,92%);margin:auto}
-header{
-  position:sticky;top:0;z-index:10;
-  background:#0b0b1bee;backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border)
-}
-.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:900}
-.logo{
-  width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
-  color:#111127;background:linear-gradient(135deg,var(--cyan),var(--purple));font-size:23px
-}
-.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
-.navlinks{display:flex;gap:22px;font-size:14px;color:#d4d2ec}
-.navlinks a:hover{color:var(--cyan)}
-.btn{
-  border:0;border-radius:13px;padding:12px 18px;cursor:pointer;
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  font-weight:800;transition:.2s
-}
-.btn:hover{transform:translateY(-2px)}
-.primary{color:#101027;background:linear-gradient(110deg,var(--cyan),#b2a0ff)}
-.secondary{background:#242440;color:white;border:1px solid var(--border)}
-button:disabled{opacity:.55;cursor:wait;transform:none}
-.hero{
-  padding:78px 0 65px;
-  background:radial-gradient(ellipse at 80% 15%,#895aff35,transparent 40%),
-             radial-gradient(ellipse at 10% 75%,#29dce020,transparent 35%)
-}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
-.eyebrow{display:inline-block;border:1px solid #49416d;border-radius:50px;padding:6px 13px;font-size:12px;color:#d9ccff}
-h1{font-size:clamp(40px,6vw,70px);line-height:1.08;letter-spacing:-2.5px;margin:22px 0}
-.gradient{
-  background:linear-gradient(100deg,var(--cyan),#aa91ff 60%,var(--pink));
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.hero p,.section-head p{color:var(--muted)}
-.hero p{font-size:17px;max-width:580px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-.art{
-  min-height:310px;border:1px solid var(--border);border-radius:27px;padding:27px;
-  display:flex;flex-direction:column;justify-content:space-between;
-  background:linear-gradient(145deg,#27204b,#11152b)
-}
-.art-icon{font-size:70px}
-.art strong{font-size:26px;display:block}
-.art p{font-size:14px}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tags span{font-size:12px;background:#ffffff12;padding:6px 10px;border-radius:9px}
-section{padding:60px 0}
-.kicker{font-size:12px;letter-spacing:2px;color:var(--cyan);font-weight:850}
-h2{font-size:clamp(28px,4vw,39px);line-height:1.2;margin:8px 0}
-.section-head{margin-bottom:25px}
-.panel{padding:26px;border:1px solid var(--border);border-radius:23px;background:var(--panel)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{display:flex;flex-direction:column;gap:8px;min-width:0}
-.full{grid-column:1/-1}
-label{font-size:13px;font-weight:750}
-input,select,textarea{
-  width:100%;padding:13px 14px;color:var(--text);
-  background:#0d0d20;border:1px solid #343451;border-radius:12px;outline:none
-}
-input:focus,select:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #48e0e817}
-textarea{min-height:100px;resize:vertical}
-input[type=file]{font-size:12px}
-.hint{font-size:12px;color:var(--muted)}
-.consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted)}
-.consent input{width:auto;margin-top:5px}
-#formMessage{font-size:14px;overflow-wrap:anywhere}
-.success{color:var(--cyan)}.error{color:#ff8f9d}
-.gallery-tools{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
-.gallery-tools input{flex:1;min-width:190px}
-.gallery-tools select{width:auto;min-width:160px}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.work-card{min-width:0;overflow:hidden;border:1px solid var(--border);border-radius:18px;background:var(--panel);display:flex;flex-direction:column}
-.cover{height:205px;position:relative;overflow:hidden;display:grid;place-items:center;background:#211d40;font-size:48px}
-.cover img{width:100%;height:100%;object-fit:cover;display:block}
-.fallback{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:12px}
-.fallback small{font-size:11px;color:var(--muted)}
-.work-body{padding:18px;display:flex;flex-direction:column;flex:1;min-width:0}
-.category{color:var(--cyan);font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:1px}
-.work-body h3{font-size:18px;line-height:1.35;overflow-wrap:anywhere;margin:8px 0}
-.work-body p{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
-.work-meta{margin-top:auto;margin-bottom:12px;font-size:12px;color:#c4c1df}
-.work-link{color:var(--cyan);font-size:13px;font-weight:800}
-.empty{grid-column:1/-1;text-align:center;border:1px dashed #494866;border-radius:16px;padding:35px;color:var(--muted)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step{padding:21px;border:1px solid var(--border);border-radius:18px;background:var(--panel)}
-.step p{color:var(--muted);font-size:13px}
-footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
-.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-@media(max-width:760px){
- .nav{min-height:64px}.navlinks{display:none}
- .hero{padding:48px 0}.hero-grid{grid-template-columns:1fr;gap:25px}
- h1{letter-spacing:-1.5px}.art{min-height:260px}
- .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:500px){
- section{padding:43px 0}.cards,.form-grid,.steps{grid-template-columns:1fr}
- .full{grid-column:auto}.panel{padding:18px}
- .gallery-tools>*{width:100%!important}
- .cover{height:220px}
-}
+:root{--bg:#f5f7f0;--panel:#ffffff;--text:#12382e;--muted:#64766e;--emerald:#073f32;--emerald2:#0b5b45;--mint:#bdf5d7;--neon:#65f5a8;--gold:#d7b66d;--border:#dce8df;--shadow:0 18px 50px #0a47300f}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7}button,input,select,textarea{font:inherit}a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#073f32f2;color:#fff;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff20;box-shadow:0 8px 28px #062e2412}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.8px}.logo{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;color:#073f32;background:linear-gradient(145deg,#e0ffe9,#65f5a8);font-size:25px;box-shadow:0 0 28px #65f5a82b}.brand small{display:block;color:#b9e9cd;font-size:10px;letter-spacing:2.3px;font-weight:700}.navlinks{display:flex;gap:23px;font-size:14px;color:#e1f2e7}.navlinks a{transition:color .2s}.navlinks a:hover{color:var(--neon)}
+.btn{border:0;border-radius:14px;padding:12px 19px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;transition:transform .22s,box-shadow .22s,background .22s}.btn:hover{transform:translateY(-2px)}.primary{color:#073f32;background:linear-gradient(115deg,#bdf5d7,#65f5a8);box-shadow:0 8px 22px #65f5a82a}.primary:hover{box-shadow:0 12px 30px #65f5a84a}.secondary{background:#fff;color:var(--emerald);border:1px solid #d3e4d8;box-shadow:0 5px 18px #073f3208}button:disabled{opacity:.55;cursor:wait;transform:none}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:86px 0 76px;background:radial-gradient(ellipse at 82% 15%,#bcefd35c,transparent 36%),radial-gradient(ellipse at 8% 85%,#d8bd7d25,transparent 35%),linear-gradient(130deg,#f8faf4,#edf7ee)}.hero:after{content:"۞";position:absolute;z-index:-1;right:-40px;top:5px;font-size:330px;line-height:1;color:#0b5b4508;transform:rotate(14deg)}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #c4e4cf;border-radius:50px;padding:7px 14px;font-size:12px;color:var(--emerald2);background:#ffffffb8;font-weight:800;letter-spacing:.5px}.eyebrow:before{content:"✦";color:#b48a35}h1{font-size:clamp(40px,5.5vw,68px);line-height:1.08;letter-spacing:-2.5px;margin:23px 0;color:#073f32}.gradient{background:linear-gradient(100deg,#08734f,#17a96c 60%,#b18a3b);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p,.section-head p{color:var(--muted)}.hero p{font-size:17px;max-width:600px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.art{position:relative;min-height:355px;border:1px solid #ffffffa6;border-radius:30px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(145deg,#0c6047,#073b30 75%);color:#fff;box-shadow:0 24px 65px #073f3229}.art:before{content:"";position:absolute;inset:14px;border:1px solid #d6ffe21e;border-radius:23px;pointer-events:none}.art:after{content:"☾";position:absolute;right:20px;top:-20px;color:#f2d996;font-size:145px;opacity:.18}.art-icon{font-size:64px;filter:drop-shadow(0 8px 16px #0003)}.art strong{font-size:27px;display:block;letter-spacing:-.5px}.art p{font-size:14px;color:#c9e8d7}.tags{display:flex;flex-wrap:wrap;gap:8px}.tags span{font-size:12px;background:#ffffff12;border:1px solid #ffffff20;padding:7px 11px;border-radius:10px;color:#e4ffed}
+section{padding:68px 0;animation:rise-in .65s ease both}section[hidden]{display:none!important}@keyframes rise-in{from{opacity:.85;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.kicker{font-size:11px;letter-spacing:2.2px;color:#168357;font-weight:900}.section-head{margin-bottom:27px}.section-head h2{color:#103f31}h2{font-size:clamp(28px,4vw,40px);line-height:1.2;margin:8px 0;letter-spacing:-1px}.panel{padding:30px;border:1px solid #e0e9e1;border-radius:25px;background:var(--panel);box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}.field{display:flex;flex-direction:column;gap:8px;min-width:0}.full{grid-column:1/-1}label{font-size:13px;font-weight:800;color:#214b3b}input,select,textarea{width:100%;padding:14px 15px;color:var(--text);background:#fbfdf9;border:1px solid #d8e5da;border-radius:13px;outline:none;transition:border-color .2s,box-shadow .2s}input:focus,select:focus,textarea:focus{border-color:#20a76a;box-shadow:0 0 0 4px #20a76a16}textarea{min-height:110px;resize:vertical}input[type=file]{font-size:12px;background:#f7faf5}.hint{font-size:12px;color:var(--muted)}.consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted);font-weight:500}.consent input{width:auto;margin-top:6px;accent-color:#08734f}#formMessage{font-size:14px;overflow-wrap:anywhere;margin-top:7px}.success{color:#087d4b}.error{color:#c43b4c}
+#galeri{background:linear-gradient(180deg,#edf5ed,#f7f8f2)}.gallery-tools{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.gallery-tools input{flex:1;min-width:190px}.gallery-tools select{width:auto;min-width:160px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.work-card{min-width:0;overflow:hidden;border:1px solid #dfe9df;border-radius:20px;background:#fff;display:flex;flex-direction:column;box-shadow:0 8px 28px #0a473009;transition:transform .22s,box-shadow .22s}.work-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px #0a473018}.cover{height:210px;position:relative;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#d8f3df,#f4e8c8);font-size:48px}.cover img{width:100%;height:100%;object-fit:cover;display:block}.fallback{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:12px;color:#0d6b49}.fallback small{font-size:11px;color:#527163}.work-body{padding:20px;display:flex;flex-direction:column;flex:1;min-width:0}.category{color:#138254;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px}.work-body h3{font-size:18px;line-height:1.35;overflow-wrap:anywhere;margin:8px 0;color:#123e30}.work-body p{font-size:13px;color:var(--muted);overflow-wrap:anywhere}.work-meta{margin-top:auto;margin-bottom:12px;font-size:12px;color:#62766b}.work-link{color:#08784f;font-size:13px;font-weight:900}.empty{grid-column:1/-1;text-align:center;border:1px dashed #b9d2bf;border-radius:17px;padding:38px;color:var(--muted);background:#ffffffa6}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.step{padding:24px;border:1px solid #dfebdf;border-radius:20px;background:linear-gradient(145deg,#fff,#f7fbf5);box-shadow:0 10px 30px #0a473008;transition:transform .2s}.step:hover{transform:translateY(-3px)}.step>div{font-size:26px}.step h3{color:#114733}.step p{color:var(--muted);font-size:13px}
+footer{padding:35px 0;background:#062f26;color:#d2e7d8;font-size:12px;border-top:3px solid #65f5a8}.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}.footer-row span:last-child{color:#9fc8af}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media(max-width:760px){.nav{min-height:70px;flex-wrap:wrap;padding:10px 0}.navlinks{display:flex;order:3;width:100%;justify-content:center;gap:18px;padding:4px 0 8px;font-size:13px}.nav>.btn{padding:10px 12px;font-size:12px}.hero{padding:54px 0}.hero-grid{grid-template-columns:1fr;gap:27px}h1{letter-spacing:-1.6px}.art{min-height:285px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}section{padding:54px 0}}
+@media(max-width:500px){section{padding:44px 0}.cards,.form-grid,.steps{grid-template-columns:1fr}.full{grid-column:auto}.panel{padding:19px}.gallery-tools>*{width:100%!important}.cover{height:225px}.hero p{font-size:16px}.art{padding:24px}.footer-row{flex-direction:column}.brand{gap:9px}.logo{width:40px;height:40px}}
 </style>
 </head>
 <body>
 <header>
  <div class="container nav">
-  <a class="brand" href="#beranda"><span class="logo">✦</span><span>DAKWAH MUDA<small>CREATIVE HUB</small></span></a>
-  <nav class="navlinks"><a href="#beranda">Beranda</a><a href="#kirim">Kirim Karya</a><a href="#galeri">Galeri</a></nav>
+  <a class="brand" href="#beranda"><span class="logo">☪</span><span>RUANG DAKWAH<small>SATU KARYA, SEJUTA KEBAIKAN</small></span></a>
+  <nav class="navlinks"><a href="#beranda">Beranda</a><a href="#kirim">Kirim Karya</a><a href="#galeri">Galeri Karya</a><a href="#tentang">Tentang</a><a href="#panduan">Panduan</a></nav>
   <a class="btn primary" href="#kirim">+ Kirim Karya</a>
  </div>
 </header>
@@ -139,22 +34,22 @@ footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font
 <section class="hero" id="beranda">
  <div class="container hero-grid">
   <div>
-   <span class="eyebrow">✦ RUANG KREATIF GENERASI MUDA</span>
-   <h1>Sebarkan Kebaikan.<br><span class="gradient">Ciptakan Dampak.</span></h1>
-   <p>Wadah berbagi pesan dakwah melalui tulisan, poster, video, desain, dan karya inspiratif lainnya. Ide baikmu layak menjangkau lebih banyak orang.</p>
+   <span class="eyebrow">RUANG KREATIF DAKWAH GENERASI MUDA</span>
+   <h1>Satu Karya,<br><span class="gradient">Sejuta Kebaikan.</span></h1>
+   <p>Setiap ide memiliki makna. Setiap karya memiliki peluang untuk menginspirasi. Jadikan kreativitasmu sebagai jalan menyebarkan kebaikan melalui konten dakwah yang inspiratif dan bermanfaat.</p>
    <div class="actions"><a class="btn primary" href="#kirim">Mulai Berkarya ↗</a><a class="btn secondary" href="#galeri">Jelajahi Karya ↓</a></div>
   </div>
   <div class="art">
    <div class="art-icon">🌙</div>
-   <div><strong>Your Idea. Your Voice.</strong><p>Inspirasi hari ini, perubahan esok hari.</p></div>
+   <div><strong>Kreativitas untuk Kebaikan.</strong><p>Tuangkan ide kreatifmu menjadi pesan dakwah yang menginspirasi dan menghadirkan manfaat bagi banyak orang.</p></div>
    <div class="tags"><span>✦ Kreatif</span><span>♡ Inspiratif</span><span>↗ Berdampak</span></div>
   </div>
  </div>
 </section>
 
-<section id="kirim">
+<section id="kirim" hidden>
  <div class="container">
-  <div class="section-head"><span class="kicker">01 / SUBMISSION</span><h2>Waktunya Karyamu Bersinar.</h2><p>Lengkapi formulir dan kirimkan karya terbaikmu.</p></div>
+  <div class="section-head"><span class="kicker">01 / KIRIM KARYA</span><h2>Waktunya Karyamu Bersinar.</h2><p>Tuangkan ide baikmu. Lengkapi formulir dan kirimkan karya terbaikmu untuk ditinjau pengelola.</p></div>
   <div class="panel">
    <form id="submissionForm">
     <div class="form-grid">
@@ -176,9 +71,9 @@ footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font
  </div>
 </section>
 
-<section id="galeri">
+<section id="galeri" hidden>
  <div class="container">
-  <div class="section-head"><span class="kicker">02 / COMMUNITY GALLERY</span><h2>Karya yang Menginspirasi.</h2><p>Karya yang disetujui pengelola akan muncul di sini.</p></div>
+  <div class="section-head"><span class="kicker">02 / GALERI KARYA</span><h2>Karya yang Menginspirasi.</h2><p>Karya yang disetujui pengelola akan muncul di sini.</p></div>
   <div class="gallery-tools">
    <input id="searchInput" type="search" placeholder="Cari judul atau nama pembuat..." aria-label="Cari karya">
    <select id="filterCategory" aria-label="Filter kategori"><option value="">Semua kategori</option><option>Tulisan</option><option>Poster & Desain</option><option>Video</option><option>Audio & Podcast</option><option>Infografis</option><option>Lainnya</option></select>
@@ -189,9 +84,9 @@ footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font
  </div>
 </section>
 
-<section>
+<section id="panduan" hidden>
  <div class="container">
-  <div class="section-head"><span class="kicker">03 / HOW IT WORKS</span><h2>Langkah Mudah, Dampak Nyata.</h2></div>
+  <div class="section-head"><span class="kicker">03 / PANDUAN</span><h2>Langkah Mudah, Dampak Nyata.</h2><p>Ruang Dakwah membuka pengiriman karya dalam dua periode setiap bulan. Ikuti langkah berikut agar karya siap ditinjau.</p></div>
   <div class="steps">
    <article class="step"><div>✍️</div><h3>01. Buat Karya</h3><p>Siapkan konten dakwah yang kreatif dan bermanfaat.</p></article>
    <article class="step"><div>🚀</div><h3>02. Kirim Karya</h3><p>Isi formulir dan unggah berkas untuk ditinjau.</p></article>
@@ -201,7 +96,7 @@ footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font
 </section>
 </main>
 
-<footer><div class="container footer-row"><span>© <span id="year"></span> Dakwah Muda Creative Hub</span><span>Dibuat untuk berbagi kebaikan ✦</span></div></footer>
+<footer id="tentang"><div class="container footer-row"><span><strong>☪ RUANG DAKWAH</strong><br>Satu Karya, Sejuta Kebaikan.<br><span>© <span id="year"></span> RUANG DAKWAH</span></span><span><a href="#beranda">Beranda</a> · <a href="#kirim">Kirim Karya</a> · <a href="#galeri">Galeri Karya</a> · <a href="#panduan">Panduan</a><br>Mulai dari satu ide, hadirkan inspirasi, dan sebarkan kebaikan melalui karya.</span></div></footer>
 
 <script>
 "use strict";
@@ -214,6 +109,23 @@ const ALLOWED_EXT = ["pdf","jpg","jpeg","png","webp","mp3","mp4","doc","docx"];
 const $ = id => document.getElementById(id);
 const form = $("submissionForm");
 const button = $("submitButton");
+
+// Bagian Kirim Karya dan Galeri Karya hanya tampil saat menu terkait dipilih.
+// Saat pengguna memilih bagian lain, keduanya disembunyikan kembali.
+const submissionSection = $("kirim");
+const gallerySection = $("galeri");
+const guideSection = $("panduan");
+function showSelectedSection(target) {
+  submissionSection.hidden = target !== "#kirim";
+  gallerySection.hidden = target !== "#galeri";
+  // Panduan ditampilkan bersama formulir Kirim Karya, dan juga melalui menu Panduan.
+  guideSection.hidden = target !== "#kirim" && target !== "#panduan";
+}
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", () => {
+    showSelectedSection(link.getAttribute("href"));
+  });
+});
 let publishedWorks = [];
 let uploadPending = false;
 let activeRequestId = "";
